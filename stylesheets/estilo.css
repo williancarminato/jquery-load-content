@@ -1,0 +1,167 @@
+/*
+ * @author: Airton Vancin <airtonvancin@gmail.com>
+ * ModifiedBy: Willian Carminato <williancarminato@gmail.com>
+ */
+body{
+    background: #ffffff;
+    background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #ffffff 41%, #dddddd 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(41%,#ffffff), color-stop(100%,#dddddd));
+    background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#ffffff 41%,#dddddd 100%);
+    background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,#ffffff 41%,#dddddd 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,#ffffff 41%,#dddddd 100%);
+    background: radial-gradient(ellipse at center,  #ffffff 0%,#ffffff 41%,#dddddd 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=1 );
+
+
+    color: #444;
+    font-family: "Roboto Condensed", Arial;
+    font-weight: 400;
+}
+p{ font-size: 16px; line-height: 26px; text-shadow: 1px 1px 1px rgba(0,0,0, 0.2); margin: 0 0 20px 0;}
+h1{ font-size: 48px; text-align: center; text-shadow: 0 0 2px rgba(0,0,0, 0.5); font-weight: 700; margin: 0 0 20px 0;}
+h2{ font-size: 36px; line-height: 36px; text-shadow: 0 0 2px rgba(0,0,0, 0.5); margin: 0 0 20px 0;}
+h3{ font-size: 34px; line-height: 32px; text-shadow: 0 0 2px rgba(0,0,0, 0.5); margin: 0 0 20px 0; text-shadow: 0 0 2px rgba(0,0,0, 0.5); letter-spacing: -1px; }
+h4{ font-size: 32px; line-height: 30px; text-shadow: 0 0 2px rgba(0,0,0, 0.5); margin: 0 0 20px 0;}
+h5{ font-size: 26px; line-height: 28px; text-shadow: 0 0 2px rgba(0,0,0, 0.5); margin: 0 0 20px 0;}
+
+#page{
+    width: 940px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.buttons{
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+.buttons .btn{
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 10px;
+    font-size: 22px;
+    line-height: 26px;
+    background: #2E7BCF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #000;
+    box-shadow: 0 6px 2px #000;
+}
+.buttons .btn:hover{
+    background: #1E90FF;
+}
+
+.box{
+    background: #ddd;
+    padding: 20px;
+    margin: 0 0 20px;
+    border-radius: 10px;
+}
+.code{
+    margin-bottom: 40px;
+}
+
+.accessibility { padding: 10px 0; margin-bottom: 10px; }
+.accessibility a{
+    padding: 5px 8px;
+    margin-right: 5px;
+    border:1px solid #ccc;
+    color: #444;
+    background: #f5f5f5;
+    text-decoration: none;
+    font-family: 18px;
+    text-align: center;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.5);
+}
+.autor h3{ border-bottom: 1px solid #444; padding-bottom: 5px; }
+.autor a{
+    color: #444;
+}
+.license{ float: right; text-align: right; }
+.license p{ margin: 0 0 5px 0; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #444;
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+}
+table th {
+    border: 1px solid #2E7BCF;
+    font-size: 13px;
+    text-align: center;
+    background: #2E7BCF; 
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 3px;
+    text-transform: uppercase;
+    vertical-align: bottom;
+}
+table td {
+    line-height: 20px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+table tbody tr:nth-child(2n+1){
+    background: none repeat scroll 0 0 #ddd;
+}
+
+/* =============================================================================
+   Prettify
+   ========================================================================== */
+
+pre .str, code .str { color: #FFFF66; } /* string  - green */
+pre .kwd, code .kwd { color: #7AE225; } /* keyword - dark pink */
+pre .com, code .com { color: #428BDD; font-style: italic; } /* comment - gray */
+pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+pre .pun, code .pun { color: #D1EDFF; } /* punctuation - white */
+pre .pln, code .pln { color: #D1EDFF; } /* plaintext - white */
+pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+pre.prettyprint, code.prettyprint {
+    background-color: #111;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+}
+
+pre.prettyprint {
+    width: 96%;
+    margin: 1em auto;
+    padding: 2%;
+    white-space: pre-wrap;
+    font-size: 14px;
+}
+
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre .str, code .str { color: #060; }
+  pre .kwd, code .kwd { color: #006; font-weight: bold; }
+  pre .com, code .com { color: #600; font-style: italic; }
+  pre .typ, code .typ { color: #404; font-weight: bold; }
+  pre .lit, code .lit { color: #044; }
+  pre .pun, code .pun { color: #440; }
+  pre .pln, code .pln { color: #000; }
+  pre .tag, code .tag { color: #006; font-weight: bold; }
+  pre .atn, code .atn { color: #404; }
+  pre .atv, code .atv { color: #060; }
+}

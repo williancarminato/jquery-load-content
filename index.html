@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jQuery Load Content</title>
+
+	<meta name="description" content="The jQuery Load Content plugin was developed to make more easy to load content of json and html of requisitions in a web page">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="jQuery Load Content">
+	<meta property="og:site_name" content="jQuery Load Content">
+	<meta property="og:url" content="http://williancarminato.github.io/jquery-load-content/">
+	<meta property="og:description" content="The jQuery Load Content plugin was developed to make more easy to load content of json and html of requisitions in a web page">
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/estilo.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="all" />
+</head>
+
+<body>
+    <div id="page">
+	    <h1>jQuery Load Content</h1>
+        <p>The jQuery Load Content plugin was developed to make more easy to load content of json and html of requisitions in a web page.</p>
+
+	    <div class="buttons">
+		    <a href="https://github.com/williancarminato/jquery-load-content" class="btn">Download on Github</a>
+	    </div>
+
+	    <h3>Demo</h3>
+	    <div class="box">
+            <div data-ajax="example.json">Div Tag - is in the default elements, should be loaded.</div>
+            <p data-ajax="example.json">P Tag - is in the default elements, should be loaded.</p>
+            <span data-ajax="example.json">Span Tag - is NOT in the default elements, should not be loaded.</span>
+        </div>
+
+	    <article class="code">
+		    <h3>Html</h3>
+<pre class="prettyprint lang=html">
+&lt;div data-ajax="example.json">Div Tag - is in the default elements should be loaded.&lt;/div&gt;
+&lt;p data-ajax="example.json">P Tag - is in the default elements should be loaded.&lt;/p&gt;
+&lt;span data-ajax="example.json">Span Tag - is NOT in the default elements, should not be loaded.&lt;/span&gt;
+</pre>
+	    </article>
+
+		<article class="code">
+			<h3>Example:</h3>
+<pre class="prettyprint">&lt;script src="jquery.loadcontent.min.js"&gt;</script></pre>
+<pre class="prettyprint">$('body').loadcontent();</pre>
+			<h3>Specific element example:</h3>
+<pre class="prettyprint">
+$('#div-load').loadcontent({
+    contentType: "html",
+    onSucess: function (element, response) {
+        element.html(response);
+    }
+});
+</pre>
+		</article>
+
+		<h3>Options</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Option</th>
+					<th>Default</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Elements</td>
+					<td>"div, p"</td>
+					<td>These will be the tags selected if they have the attribute "data-ajax".</td>
+				</tr>
+				<tr>
+					<td>ContentType</td>
+					<td>"json"</td>	
+					<td>The content type that will be loaded.</td>				
+				</tr>
+				<tr>
+					<td>onSucess</td>
+					<td>callback</td>
+					<td>The callback function used after the ajax requisition. The default function is: <b>function (element, response){ element.html(response.content); }<b></td>					
+				</tr>			
+			</tbody>
+		</table>
+		<div class="autor">
+			<h3>Author</h3>
+			<a href="https://twitter.com/willcampideli"><img src="https://si0.twimg.com/profile_images/1105056834/rajatkashyap-batman-tux_bigger.png" alt=""></a>
+			<a href="https://twitter.com/willcampideli">@willcampideli</a>
+
+			<div class="license">
+				<p>Available under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.</p>
+				<p>Reference: <a href="http://jqueryboilerplate.com/">jQuery Boilerplate</a>.</p>
+			</div>
+		</div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="javascripts/plugins.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.loadcontent.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+			prettyPrint();
+
+            $('body').loadcontent();
+        });
+    </script>
+</body>
+</html>
