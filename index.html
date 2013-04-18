@@ -1,78 +1,109 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jQuery Load Content</title>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<meta name="description" content="The jQuery Load Content plugin was developed to make more easy to load content of json and html of requisitions in a web page">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="jQuery Load Content">
+	<meta property="og:site_name" content="jQuery Load Content">
+	<meta property="og:url" content="http://williancarminato.github.io/jquery-load-content/">
+	<meta property="og:description" content="The jQuery Load Content plugin was developed to make more easy to load content of json and html of requisitions in a web page">
 
-    <title>Jquery-load-content by williancarminato</title>
-  </head>
+	<link rel="stylesheet" type="text/css" href="stylesheets/estilo.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="all" />
+</head>
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Jquery-load-content</h1>
-        <h2>The jQuery Load Content plugin was developed to make more easy to load JSON and HTML content  in a web page.</h2>
-        <a href="https://github.com/williancarminato/jquery-load-content" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+<body>
+    <div id="page">
+	    <h1>jQuery Load Content</h1>
+        <p>The jQuery Load Content plugin was developed to make more easy to load content of json and html of requisitions in a web page.</p>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>Welcome to GitHub Pages.</h3>
+	    <div class="buttons">
+		    <a href="https://github.com/williancarminato/jquery-load-content" class="btn">Download on Github</a>
+	    </div>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+	    <h3>Demo</h3>
+	    <div class="box">
+            <div data-ajax="example.json">Div Tag - is in the default elements, should be loaded.</div>
+            <p data-ajax="example.json">P Tag - is in the default elements, should be loaded.</p>
+            <span data-ajax="example.json">Span Tag - is NOT in the default elements, should not be loaded.</span>
+        </div>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+	    <article class="code">
+		    <h3>Html</h3>
+<pre class="prettyprint lang=html">
+&lt;div data-ajax="example.json">Div Tag - is in the default elements should be loaded.&lt;/div&gt;
+&lt;p data-ajax="example.json">P Tag - is in the default elements should be loaded.&lt;/p&gt;
+&lt;span data-ajax="example.json">Span Tag - is NOT in the default elements, should not be loaded.&lt;/span&gt;
+</pre>
+	    </article>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+		<article class="code">
+			<h3>Example:</h3>
+<pre class="prettyprint">&lt;script src="jquery.loadcontent.min.js"&gt;</script></pre>
+<pre class="prettyprint">$('body').loadcontent();</pre>
+			<h3>Specific element example:</h3>
+<pre class="prettyprint">
+$('#div-load').loadcontent({
+    contentType: "html",
+    onSucess: function (element, response) {
+        element.html(response);
+    }
+});
+</pre>
+		</article>
 
-<h3>Designer Templates</h3>
+		<h3>Options</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Option</th>
+					<th>Default</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Elements</td>
+					<td>"div, p"</td>
+					<td>These will be the tags selected if they have the attribute "data-ajax".</td>
+				</tr>
+				<tr>
+					<td>ContentType</td>
+					<td>"json"</td>	
+					<td>The content type that will be loaded.</td>				
+				</tr>
+				<tr>
+					<td>onSucess</td>
+					<td>callback</td>
+					<td>The callback function used after the ajax requisition. The default function is: <b>function (element, response){ element.html(response.content); }<b></td>					
+				</tr>			
+			</tbody>
+		</table>
+		<div class="autor">
+			<h3>Author</h3>
+			<a href="https://twitter.com/willcampideli"><img src="https://si0.twimg.com/profile_images/1105056834/rajatkashyap-batman-tux_bigger.png" alt=""></a>
+			<a href="https://twitter.com/willcampideli">@willcampideli</a>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/williancarminato/jquery-load-content/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/williancarminato/jquery-load-content/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/williancarminato/jquery-load-content"></a> is maintained by <a href="https://github.com/williancarminato">williancarminato</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+			<div class="license">
+				<p>Available under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.</p>
+				<p>Reference: <a href="http://jqueryboilerplate.com/">jQuery Boilerplate</a>.</p>
+			</div>
+		</div>
     </div>
 
-  
-  </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="javascripts/plugins.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.loadcontent.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+			prettyPrint();
+
+            $('body').loadcontent();
+        });
+    </script>
+</body>
 </html>
